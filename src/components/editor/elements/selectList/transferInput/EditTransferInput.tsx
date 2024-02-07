@@ -4,9 +4,6 @@ import {Button, Card, CardHeader, Divider, Grid, Input, Stack} from "@mui/materi
 import List from "@mui/material/List";
 import ListItemText from "@mui/material/ListItemText";
 import ListItemButton from "@mui/material/ListItemButton";
-import {
-    ITransferEditorElementData
-} from "../../../../../interfaces/editor/data/selectLists";
 import Typography from "@mui/material/Typography";
 import WorkAreaInputBase from "../../WorkAreaInputBase";
 import {editorStore} from "../../../../../store/editorStore";
@@ -16,6 +13,7 @@ import {
     handleChosenLabelChange,
     handleChosenSelectedNumberLabelChange
 } from "./handlers";
+import {TransferEditorElementDataStore} from "./store";
 
 const elementsList = (
     title: React.ReactNode,
@@ -54,7 +52,7 @@ const elementsList = (
 )
 
 const EditTransferInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ITransferEditorElementData
+    const element = editorStore.getElementData(index) as TransferEditorElementDataStore
     const total_length = element.values.length
 
     const right = element.default_value as number[]

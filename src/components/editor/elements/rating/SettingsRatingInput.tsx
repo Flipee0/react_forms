@@ -5,11 +5,11 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import SettingsInputBase from "../SettingsInputBase";
 import {editorStore} from "../../../../store/editorStore";
-import {IRatingEditorElementData} from "../../../../interfaces/editor/data/rating";
 import {handleDefaultValueChange, handleRatingLabelChange} from "./handlers";
+import {RatingEditorElementDataStore} from "./store";
 
 const SettingsRatingInput: FC<IBaseEditorElementProps> = ({index}) => {
-    const element = editorStore.getElementData(index) as IRatingEditorElementData
+    const element = editorStore.getElementData(index) as RatingEditorElementDataStore
 
     const handleMaxRatingChange: ChangeEventHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         element.max_rating = Number.parseInt(e.target.value)

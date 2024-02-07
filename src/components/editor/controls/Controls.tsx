@@ -1,17 +1,19 @@
 import Divider from '@mui/material/Divider';
 import Stack from '@mui/material/Stack';
 import React from 'react';
-import ControlElement from "./ControlElement";
 import Typography from "@mui/material/Typography";
 import Group from "../shared/Group";
-import {
-    checkbox_input,
-    description_layout,
-    label_layout,
-    multiple_select_input,
-    radio_input, rating_input, single_select_input, slider_input,
-    input_field, switch_input, transfer_input
-} from "../../../consts/editorElements";
+import {ControlInputField} from "../elements/inputField";
+import ControlLabelLayout from "../elements/layout/labelLayout/ControlLabelLayout";
+import ControlDescriptionLayout from "../elements/layout/descriptionLayout/ControlDescriptionLayout";
+import ControlRadioInput from "../elements/selectList/radioInput/ControlRadioInput";
+import ControlCheckboxInput from "../elements/selectList/checkBoxInput/ControlCheckboxInput";
+import ControlSingleSelectInput from "../elements/selectList/singleSelectInput/ControlSingleSelectInput";
+import ControlMultipleSelectInput from "../elements/selectList/multipleSelect/ControlMultipleSelectInput";
+import ControlTransferInput from "../elements/selectList/transferInput/ControlTransferInput";
+import ControlSwitchInput from "../elements/switch/ControlSwitchInput";
+import ControlRatingInput from "../elements/rating/ControlRatingInput";
+import ControlSliderInput from "../elements/slider/ControlSliderInput";
 
 const Controls = () => {
     return (
@@ -19,27 +21,27 @@ const Controls = () => {
             <Typography variant={"h5"} textAlign={"center"}>Tools</Typography>
             <Divider/>
             <Group label={"Layout"}>
-                <ControlElement editor_element={label_layout}/>
-                <ControlElement editor_element={description_layout}/>
+                <ControlLabelLayout/>
+                <ControlDescriptionLayout/>
             </Group>
             <Group label={"Input fields"}>
-                <ControlElement editor_element={input_field}/>
+                <ControlInputField/>
             </Group>
             <Group label={"Select inputs"}>
-                <ControlElement editor_element={radio_input}/>
-                <ControlElement editor_element={checkbox_input}/>
-                <ControlElement editor_element={single_select_input}/>
-                <ControlElement editor_element={multiple_select_input}/>
-                <ControlElement editor_element={transfer_input}/>
+                <ControlRadioInput/>
+                <ControlCheckboxInput/>
+                <ControlSingleSelectInput/>
+                <ControlMultipleSelectInput/>
+                <ControlTransferInput/>
             </Group>
             <Group label={"Switch"}>
-                <ControlElement editor_element={switch_input}/>
+                <ControlSwitchInput/>
             </Group>
             <Group label={"Rating"}>
-                <ControlElement editor_element={rating_input}/>
+                <ControlRatingInput/>
             </Group>
             <Group label={"Slider"}>
-                <ControlElement editor_element={slider_input}/>
+                <ControlSliderInput/>
             </Group>
         </Stack>
     );

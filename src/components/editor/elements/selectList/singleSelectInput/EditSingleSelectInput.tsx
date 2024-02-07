@@ -3,12 +3,10 @@ import {IBaseEditorElementProps} from "../../../../../interfaces/editor/data/bas
 import {FormControl, InputLabel, MenuItem, Select, SelectChangeEvent} from "@mui/material";
 import WorkAreaInputBase from "../../WorkAreaInputBase";
 import {editorStore} from "../../../../../store/editorStore";
-import {
-    ISingleSelectEditorElementData
-} from "../../../../../interfaces/editor/data/selectLists";
+import {SingleSelectEditorElementDataStore} from "./store";
 
 const EditSingleSelectInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ISingleSelectEditorElementData
+    const element = editorStore.getElementData(index) as SingleSelectEditorElementDataStore
 
     const handleSelectChange = (e: SelectChangeEvent<number>) => {
         element.default_value = e.target.value as number

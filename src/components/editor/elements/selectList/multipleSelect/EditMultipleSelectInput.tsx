@@ -12,10 +12,10 @@ import {
 } from "@mui/material";
 import WorkAreaInputBase from "../../WorkAreaInputBase";
 import {editorStore} from "../../../../../store/editorStore";
-import {IMultipleSelectEditorElementData} from "../../../../../interfaces/editor/data/selectLists";
+import {MultipleSelectEditorElementDataStore} from "./store";
 
 const EditMultipleSelectInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as IMultipleSelectEditorElementData
+    const element = editorStore.getElementData(index) as MultipleSelectEditorElementDataStore
 
     const handleSelectChange = (e: SelectChangeEvent<number[]>) => {
         element.default_value = e.target.value as number[]

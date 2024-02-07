@@ -1,8 +1,7 @@
 import React from 'react';
 import {Input} from "@mui/material";
 import {Theme} from "@mui/material/styles";
-import {editorStore} from "../../../store/editorStore";
-import {IBaseEditorInputsElementData} from "../../../interfaces/editor/data/base";
+import {BaseEditorInputsElementDataStore, editorStore} from "../../../store/editorStore";
 import {handleDescriptionChange, handleLabelChange} from "./handlers";
 import {observer} from "mobx-react-lite";
 
@@ -12,8 +11,7 @@ type Props = {
 }
 
 const WorkAreaInputBase = observer(({index, theme}: Props) => {
-    const element = editorStore.getElementData(index) as IBaseEditorInputsElementData
-
+    const element = editorStore.getElementData(index) as BaseEditorInputsElementDataStore
     return (
         <>
             <Input

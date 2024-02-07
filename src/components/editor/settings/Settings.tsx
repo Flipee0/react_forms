@@ -14,7 +14,8 @@ const Settings = observer(() => {
             {editorStore.selected != null &&
                 <SettingsEditor
                     value={editorStore.elements[editorStore.selected]}
-                    selected={editorStore.selected}/>
+                    selected={editorStore.selected}
+                />
             }
             {editorStore.selected == null &&
                 <Typography variant={"body1"}>Select field to view settings</Typography>

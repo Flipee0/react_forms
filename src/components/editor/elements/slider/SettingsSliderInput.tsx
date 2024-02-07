@@ -2,7 +2,7 @@ import React, {ChangeEventHandler, FC} from 'react';
 import {IBaseEditorElementProps} from "../../../../interfaces/editor/data/base";
 import {Button, FormControlLabel, Switch, ToggleButton, ToggleButtonGroup} from "@mui/material";
 import TextField from "@mui/material/TextField";
-import {ISliderEditorElementData, SliderMark} from "../../../../interfaces/editor/data/sliders";
+import {SliderEditorElementDataStore, SliderMark} from "./store";
 import {editorStore} from "../../../../store/editorStore";
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
@@ -10,7 +10,7 @@ import SettingsInputBase from "../SettingsInputBase";
 import {handleSliderLabelChange} from "./handlers";
 
 const SettingsSliderInput: FC<IBaseEditorElementProps> = ({index}) => {
-    const element = editorStore.getElementData(index) as ISliderEditorElementData
+    const element = editorStore.getElementData(index) as SliderEditorElementDataStore
 
     const marks_type: boolean | "custom" = (typeof element.marks === "boolean") ? element.marks : "custom"
 

@@ -1,8 +1,6 @@
 import React from 'react';
 import {editorStore} from "../../../../store/editorStore";
-import {
-    IBaseSelectListEditorElementData
-} from "../../../../interfaces/editor/data/selectLists";
+import {BaseSelectListEditorElementDataStore} from "./store";
 import TextField from "@mui/material/TextField";
 import {
     handleAddOptionClick,
@@ -26,7 +24,7 @@ type SelectsProps = {
 }
 
 export const SettingsSelectLabelField = observer(({index}: Props) => {
-    const element = editorStore.getElementData(index) as IBaseSelectListEditorElementData
+    const element = editorStore.getElementData(index) as BaseSelectListEditorElementDataStore
 
     return (
         <TextField
@@ -40,7 +38,7 @@ export const SettingsSelectLabelField = observer(({index}: Props) => {
 });
 
 export const CheckboxValuesForm = observer(({index, theme, enableAddButton}: SelectsProps) => {
-    const element = editorStore.getElementData(index) as IBaseSelectListEditorElementData
+    const element = editorStore.getElementData(index) as BaseSelectListEditorElementDataStore
 
     return (
         <>
@@ -76,7 +74,7 @@ export const CheckboxValuesForm = observer(({index, theme, enableAddButton}: Sel
 })
 
 export const RadioValuesForm = observer(({index, theme, enableAddButton}: SelectsProps) => {
-    const element = editorStore.getElementData(index) as IBaseSelectListEditorElementData
+    const element = editorStore.getElementData(index) as BaseSelectListEditorElementDataStore
 
     return (
         <>

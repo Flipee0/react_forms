@@ -5,18 +5,16 @@ import SettingsInputBase from "../../SettingsInputBase";
 import {CheckboxValuesForm} from "../CommonFields";
 import {editorStore} from "../../../../../store/editorStore";
 import {
-    ITransferEditorElementData
-} from "../../../../../interfaces/editor/data/selectLists";
-import {
     handleChoicesLabelChange,
     handleChoicesSelectedNumberLabelChange,
     handleChosenLabelChange,
     handleChosenSelectedNumberLabelChange
 } from "./handlers";
 import Typography from "@mui/material/Typography";
+import {TransferEditorElementDataStore} from "./store";
 
 const SettingsTransferInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ITransferEditorElementData
+    const element = editorStore.getElementData(index) as TransferEditorElementDataStore
 
     return (
         <>

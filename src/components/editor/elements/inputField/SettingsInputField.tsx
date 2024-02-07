@@ -3,12 +3,12 @@ import {IBaseEditorElementProps} from "../../../../interfaces/editor/data/base";
 import TextField from "@mui/material/TextField";
 import SettingsInputBase from "../SettingsInputBase";
 import {editorStore} from "../../../../store/editorStore";
-import {IInputFieldEditorElementData} from "../../../../interfaces/editor/data/inputField";
 import {handleDefaultValueChange} from "./handlers";
 import {FormControlLabel, Switch} from "@mui/material";
+import {InputFieldEditorElementDataStore} from "./store";
 
 const SettingsInputField: FC<IBaseEditorElementProps> = ({index}) => {
-    const element = editorStore.getElementData(index) as IInputFieldEditorElementData
+    const element = editorStore.getElementData(index) as InputFieldEditorElementDataStore
 
     const handleInputLabelChange: ChangeEventHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         element.input_label = e.target.value

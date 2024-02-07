@@ -4,10 +4,10 @@ import TextField from "@mui/material/TextField";
 import WorkAreaInputBase from "../WorkAreaInputBase";
 import {handleDefaultValueChange} from "./handlers";
 import {editorStore} from "../../../../store/editorStore";
-import {IInputFieldEditorElementData} from "../../../../interfaces/editor/data/inputField";
+import {InputFieldEditorElementDataStore} from "./store";
 
 const EditInputField: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as IInputFieldEditorElementData
+    const element = editorStore.getElementData(index) as InputFieldEditorElementDataStore
 
     return (
         <div>

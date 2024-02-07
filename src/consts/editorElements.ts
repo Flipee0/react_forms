@@ -1,5 +1,3 @@
-import {IEditorElement} from "../interfaces/editor";
-import {Input, RadioButtonChecked, Checklist, Abc, FormatColorText, ToggleOff, CreditCard, AddCard, Star, KeyboardDoubleArrowRight, Commit} from '@mui/icons-material';
 import EditInputField from "../components/editor/elements/inputField/EditInputField";
 import EditRadioInput from "../components/editor/elements/selectList/radioInput/EditRadioInput";
 import EditCheckboxInput from "../components/editor/elements/selectList/checkBoxInput/EditCheckboxInput";
@@ -30,114 +28,70 @@ import SettingsTransferInput from "../components/editor/elements/selectList/tran
 import EditSliderInput from "../components/editor/elements/slider/EditSliderInput";
 import SettingsSliderInput from "../components/editor/elements/slider/SettingsSliderInput";
 import SettingsInputField from "../components/editor/elements/inputField/SettingsInputField";
+import {EditorElementConfig} from "../store/editorStore";
 
-
-export const label_layout: IEditorElement = {
+export const label_layout: EditorElementConfig = {
     type: LABEL_LAYOUT,
-    control: {
-        label: "Label",
-        icon: FormatColorText
-    },
     edit_component: EditLabelLayout,
     settings_view_component: SettingsLabelLayout
 }
 
-export const description_layout: IEditorElement = {
+export const description_layout: EditorElementConfig = {
     type: DESCRIPTION_LAYOUT,
-    control: {
-        label: "Description",
-        icon: Abc
-    },
     edit_component: EditDescriptionLayout,
     settings_view_component: SettingsDescriptionLayout
 }
 
-export const input_field: IEditorElement = {
+export const input_field: EditorElementConfig = {
     type: INPUT_FIELD,
-    control: {
-        label: "Input Field",
-        icon: Input
-    },
     edit_component: EditInputField,
     settings_view_component: SettingsInputField
 }
 
-export const radio_input: IEditorElement = {
+export const radio_input: EditorElementConfig = {
     type: RADIO_INPUT,
-    control: {
-        label: "Choose one input",
-        icon: RadioButtonChecked
-    },
     edit_component: EditRadioInput,
     settings_view_component: SettingsRadioInput
 }
 
-export const checkbox_input: IEditorElement = {
+export const checkbox_input: EditorElementConfig = {
     type: CHECKBOX_INPUT,
-    control: {
-        label: "Choose many input",
-        icon: Checklist
-    },
     edit_component: EditCheckboxInput,
     settings_view_component: SettingsCheckboxInput
 }
 
-export const switch_input: IEditorElement = {
+export const switch_input: EditorElementConfig = {
     type: SWITCH_INPUT,
-    control: {
-        label: "Switch",
-        icon: ToggleOff
-    },
     edit_component: EditSwitchInput,
     settings_view_component: SettingsSwitchInput
 }
 
-export const single_select_input: IEditorElement = {
+export const single_select_input: EditorElementConfig = {
     type: SINGLE_SELECT_INPUT,
-    control: {
-        label: "Single select",
-        icon: CreditCard
-    },
     edit_component: EditSingleSelectInput,
     settings_view_component: SettingsSingleSelectInput
 }
 
-export const multiple_select_input: IEditorElement = {
+export const multiple_select_input: EditorElementConfig = {
     type: MULTIPLE_SELECT_INPUT,
-    control: {
-        label: "Multiple select",
-        icon: AddCard
-    },
     edit_component: EditMultipleSelectInput,
     settings_view_component: SettingsMultipleSelectInput
 }
 
-export const rating_input: IEditorElement = {
+export const rating_input: EditorElementConfig = {
     type: RATING_INPUT,
-    control: {
-        label: "Rating",
-        icon: Star
-    },
     edit_component: EditRatingInput,
     settings_view_component: SettingsRatingInput
 }
 
-export const transfer_input: IEditorElement = {
+export const transfer_input: EditorElementConfig = {
     type: TRANSFER_INPUT,
-    control: {
-        label: "Transfer list",
-        icon: KeyboardDoubleArrowRight
-    },
     edit_component: EditTransferInput,
     settings_view_component: SettingsTransferInput
 }
 
-export const slider_input: IEditorElement = {
+export const slider_input: EditorElementConfig = {
     type: SLIDER_INPUT,
-    control: {
-        label: "Slider",
-        icon: Commit
-    },
     edit_component: EditSliderInput,
     settings_view_component: SettingsSliderInput
 }

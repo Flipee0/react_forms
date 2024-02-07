@@ -3,7 +3,6 @@ import WorkAreaElement from "./WorkAreaElement";
 import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import {Box, Button, Stack } from '@mui/material';
-import {all_editor_elements} from "../../../consts/editorElements";
 import {DragDropContext, Droppable, DropResult} from 'react-beautiful-dnd';
 import {editorStore} from "../../../store/editorStore";
 import {observer} from "mobx-react-lite";
@@ -35,9 +34,7 @@ const WorkArea = observer(() => {
                                 <Box key={index} sx={{marginBottom: 3}}>
                                     <WorkAreaElement
                                         index={index}
-                                        editorElement={all_editor_elements.find(
-                                            (editor_element) => editor_element.type === value.type
-                                        )!}
+                                        editorConfig={value.editor_config}
                                     />
                                 </Box>
                             ))}

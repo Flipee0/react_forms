@@ -5,11 +5,11 @@ import TextField from "@mui/material/TextField";
 import Typography from "@mui/material/Typography";
 import SettingsInputBase from "../SettingsInputBase";
 import {editorStore} from "../../../../store/editorStore";
-import {ISwitchEditorElementData} from "../../../../interfaces/editor/data/switch";
+import {SwitchEditorElementDataStore} from "./store";
 import {handleDefaultValueToggle, handleSwitchLabelChange} from "./handlers";
 
 const SettingsSwitchInput: FC<IBaseEditorElementProps> = ({index}) => {
-    const element = editorStore.getElementData(index) as ISwitchEditorElementData
+    const element = editorStore.getElementData(index) as SwitchEditorElementDataStore
 
     return (
         <>

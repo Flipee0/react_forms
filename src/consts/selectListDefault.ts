@@ -1,0 +1,1 @@
+export const SELECT_INPUT_DEFAULT_OPTION = "Option"

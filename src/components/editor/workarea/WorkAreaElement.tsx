@@ -4,23 +4,21 @@ import {Button, Modal, useTheme} from "@mui/material";
 import DeleteIcon from '@mui/icons-material/Delete';
 import Box from "@mui/material/Box";
 import CancelIcon from '@mui/icons-material/Cancel';
-import {IEditorElement} from "../../../interfaces/editor";
 import DehazeIcon from '@mui/icons-material/Dehaze';
 import Divider from "@mui/material/Divider";
 import {Draggable} from "react-beautiful-dnd";
 import IconButton from "@mui/material/IconButton";
-import {editorStore} from "../../../store/editorStore";
+import {EditorElementConfig, editorStore} from "../../../store/editorStore";
 import {Observer, observer} from "mobx-react-lite";
 
 type Props = {
     index: number
-    editorElement: IEditorElement
+    editorConfig: EditorElementConfig
 }
 
-const WorkAreaElement = observer(({index, editorElement}: Props) => {
+const WorkAreaElement = observer(({index, editorConfig}: Props) => {
     const [isDeleteConfirmationOpen, setIsDeleteConfirmationOpen] = useState(false)
     const theme = useTheme()
-
     const selectHandler = () => {
         editorStore.selected = index
     }
@@ -35,6 +33,7 @@ const WorkAreaElement = observer(({index, editorElement}: Props) => {
 
     const deleteConfirmedCloseHandler = () => {
         deleteConfirmationCloseHandler()
+        editorStore.selected = null
         editorStore.elements.splice(index, 1)
     }
 
@@ -61,7 +60,7 @@ const WorkAreaElement = observer(({index, editorElement}: Props) => {
                         <Box sx={{width: "100%"}} onClick={selectHandler}>
                             {
                                 <Observer>
-                                    {() => editorElement.edit_component({index, theme})}
+                                    {() => editorConfig.edit_component({index, theme})}
                                 </Observer>
                             }
                         </Box>

@@ -4,10 +4,10 @@ import {Box, Input, Switch} from "@mui/material";
 import WorkAreaInputBase from "../WorkAreaInputBase";
 import {handleDefaultValueToggle, handleSwitchLabelChange} from "./handlers";
 import {editorStore} from "../../../../store/editorStore";
-import {ISwitchEditorElementData} from "../../../../interfaces/editor/data/switch";
+import {SwitchEditorElementDataStore} from "./store";
 
 const EditSwitchInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ISwitchEditorElementData
+    const element = editorStore.getElementData(index) as SwitchEditorElementDataStore
 
     return (
         <>

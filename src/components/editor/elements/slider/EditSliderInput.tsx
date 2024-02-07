@@ -4,10 +4,10 @@ import {Input, Slider} from "@mui/material";
 import WorkAreaInputBase from "../WorkAreaInputBase";
 import {handleSliderLabelChange} from "./handlers";
 import {editorStore} from "../../../../store/editorStore";
-import {ISliderEditorElementData} from "../../../../interfaces/editor/data/sliders";
+import {SliderEditorElementDataStore} from "./store";
 
 const EditSliderInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ISliderEditorElementData
+    const element = editorStore.getElementData(index) as SliderEditorElementDataStore
 
     const handleDefaultValueChange = (event: Event, new_value: number | number[]) => {
         element.default_value = new_value

@@ -1,6 +1,5 @@
 import React, {ChangeEventHandler} from 'react';
-import {IBaseEditorInputsElementData} from "../../../interfaces/editor/data/base";
-import {editorStore} from "../../../store/editorStore";
+import {BaseEditorInputsElementDataStore, editorStore} from "../../../store/editorStore";
 import {FormControlLabel, Switch} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {observer} from "mobx-react-lite";
@@ -11,7 +10,7 @@ type Props = {
 }
 
 const SettingsInputBase = observer(({index}: Props) => {
-    const element = editorStore.getElementData(index) as IBaseEditorInputsElementData
+    const element = editorStore.getElementData(index) as BaseEditorInputsElementDataStore
 
     const handleRequiredToggle: ChangeEventHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
         element.required = e.target.checked
@@ -19,7 +18,7 @@ const SettingsInputBase = observer(({index}: Props) => {
 
     return (
         <>
-            <FormControlLabel control={<Switch value={element.required} onChange={handleRequiredToggle}/>} label="Is required to fill?" />
+            <FormControlLabel control={<Switch checked={element.required} onChange={handleRequiredToggle}/>} label="Is required to fill?" />
             <TextField
                 label="Label"
                 variant="standard"

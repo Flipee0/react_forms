@@ -1,11 +1,10 @@
 import React from "react";
-import {editorStore} from "../../../store/editorStore";
-import {IBaseEditorInputsElementData} from "../../../interfaces/editor/data/base";
+import {BaseEditorInputsElementDataStore, editorStore} from "../../../store/editorStore";
 
 export const handleLabelChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    (editorStore.getElementData(index) as IBaseEditorInputsElementData).label = e.target.value
+    (editorStore.getElementData(index) as BaseEditorInputsElementDataStore).label = e.target.value
 }
 
 export const handleDescriptionChange = (e: React.ChangeEvent<HTMLInputElement>, index: number) => {
-    (editorStore.getElementData(index) as IBaseEditorInputsElementData).description = e.target.value
+    (editorStore.getElementData(index) as BaseEditorInputsElementDataStore).description = e.target.value
 }

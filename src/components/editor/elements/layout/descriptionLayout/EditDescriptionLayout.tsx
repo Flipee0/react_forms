@@ -3,10 +3,10 @@ import {IBaseEditorElementProps} from "../../../../../interfaces/editor/data/bas
 import {Input} from "@mui/material";
 import {handleDescriptionChange} from "./handlers";
 import {editorStore} from "../../../../../store/editorStore";
-import {ILabelLayoutEditorElementData} from "../../../../../interfaces/editor/data/textLayout";
+import {DescriptionLayoutEditorElementDataStore} from "./store";
 
 const EditDescriptionLayout: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ILabelLayoutEditorElementData
+    const element = editorStore.getElementData(index) as DescriptionLayoutEditorElementDataStore
 
     return (
         <Input

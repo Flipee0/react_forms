@@ -4,10 +4,10 @@ import {Input, Rating} from "@mui/material";
 import WorkAreaInputBase from "../WorkAreaInputBase";
 import {handleDefaultValueChange, handleRatingLabelChange} from "./handlers";
 import {editorStore} from "../../../../store/editorStore";
-import {IRatingEditorElementData} from "../../../../interfaces/editor/data/rating";
+import {RatingEditorElementDataStore} from "./store";
 
 const EditRatingInput: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as IRatingEditorElementData
+    const element = editorStore.getElementData(index) as RatingEditorElementDataStore
 
     return (
         <>

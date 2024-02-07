@@ -2,11 +2,11 @@ import React, {FC} from 'react';
 import {IBaseEditorElementProps} from "../../../../../interfaces/editor/data/base";
 import {Input} from "@mui/material";
 import {editorStore} from "../../../../../store/editorStore";
-import {ILabelLayoutEditorElementData} from "../../../../../interfaces/editor/data/textLayout";
 import { handleLabelChange } from './handlers';
+import {LabelLayoutEditorElementDataStore} from "./store";
 
 const EditLabelLayout: FC<IBaseEditorElementProps> = ({index, theme}) => {
-    const element = editorStore.getElementData(index) as ILabelLayoutEditorElementData
+    const element = editorStore.getElementData(index) as LabelLayoutEditorElementDataStore
     
     return (
         <Input
