@@ -3,8 +3,8 @@ import Divider from "@mui/material/Divider";
 import Typography from "@mui/material/Typography";
 import Stack from '@mui/material/Stack';
 import SettingsEditor from "./SettingsEditor";
-import {editorStore} from "../../../store/editorStore";
 import {observer} from "mobx-react-lite";
+import editorStore from "../model/editorStore";
 
 const Settings = observer(() => {
     return (

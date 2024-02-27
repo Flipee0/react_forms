@@ -8,12 +8,13 @@ import DehazeIcon from '@mui/icons-material/Dehaze';
 import Divider from "@mui/material/Divider";
 import {Draggable} from "react-beautiful-dnd";
 import IconButton from "@mui/material/IconButton";
-import {EditorElementConfig, editorStore} from "../../../store/editorStore";
 import {Observer, observer} from "mobx-react-lite";
+import editorStore from "../model/editorStore";
+import {IEditorElementConfig} from "../model/elementStore";
 
 type Props = {
     index: number
-    editorConfig: EditorElementConfig
+    editorConfig: IEditorElementConfig
 }
 
 const WorkAreaElement = observer(({index, editorConfig}: Props) => {
@@ -60,7 +61,7 @@ const WorkAreaElement = observer(({index, editorConfig}: Props) => {
                         <Box sx={{width: "100%"}} onClick={selectHandler}>
                             {
                                 <Observer>
-                                    {() => editorConfig.edit_component({index, theme})}
+                                    {() => editorConfig.work_area_component({index, theme})}
                                 </Observer>
                             }
                         </Box>

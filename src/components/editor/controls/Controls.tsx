@@ -3,17 +3,17 @@ import Stack from '@mui/material/Stack';
 import React from 'react';
 import Typography from "@mui/material/Typography";
 import Group from "../shared/Group";
-import {ControlInputField} from "../elements/inputField";
-import ControlLabelLayout from "../elements/layout/labelLayout/ControlLabelLayout";
-import ControlDescriptionLayout from "../elements/layout/descriptionLayout/ControlDescriptionLayout";
-import ControlRadioInput from "../elements/selectList/radioInput/ControlRadioInput";
-import ControlCheckboxInput from "../elements/selectList/checkBoxInput/ControlCheckboxInput";
-import ControlSingleSelectInput from "../elements/selectList/singleSelectInput/ControlSingleSelectInput";
-import ControlMultipleSelectInput from "../elements/selectList/multipleSelect/ControlMultipleSelectInput";
-import ControlTransferInput from "../elements/selectList/transferInput/ControlTransferInput";
-import ControlSwitchInput from "../elements/switch/ControlSwitchInput";
-import ControlRatingInput from "../elements/rating/ControlRatingInput";
-import ControlSliderInput from "../elements/slider/ControlSliderInput";
+import ControlLabelLayout from "../elements/layout/elements/labelLayout/ui/ControlLabelLayout";
+import ControlDescriptionLayout from "../elements/layout/elements/descriptionLayout/ui/ControlDescriptionLayout";
+import ControlInputField from "../elements/inputField/ui/ControlInputField";
+import ControlRadioInput from "../elements/selectList/elements/radioInput/ui/ControlRadioInput";
+import ControlCheckboxInput from "../elements/selectList/elements/checkBoxInput/ui/ControlCheckboxInput";
+import ControlSingleSelectInput from "../elements/selectList/elements/singleSelectInput/ui/ControlSingleSelectInput";
+import ControlMultipleSelectInput from "../elements/selectList/elements/multipleSelect/ui/ControlMultipleSelectInput";
+import ControlTransferInput from "../elements/selectList/elements/transferInput/ui/ControlTransferInput";
+import ControlSwitchInput from "../elements/switch/ui/ControlSwitchInput";
+import {ControlRatingInput} from "../elements/rating/ui/ControlRatingInput";
+import ControlSliderInput from "../elements/slider/ui/ControlSliderInput";
 
 const Controls = () => {
     return (

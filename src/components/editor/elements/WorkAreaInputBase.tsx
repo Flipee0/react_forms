@@ -1,9 +1,10 @@
 import React from 'react';
 import {Input} from "@mui/material";
 import {Theme} from "@mui/material/styles";
-import {BaseEditorInputsElementDataStore, editorStore} from "../../../store/editorStore";
 import {handleDescriptionChange, handleLabelChange} from "./handlers";
 import {observer} from "mobx-react-lite";
+import BaseEditorInputsElementDataStore from "../model/baseEditorInputsElementDataStore";
+import editorStore from "../model/editorStore";
 
 type Props = {
     index: number,

@@ -2,7 +2,7 @@ import React, {FC} from 'react';
 import {useTheme} from "@mui/material";
 import Stack from "@mui/material/Stack";
 import {Observer} from "mobx-react-lite";
-import {ElementStore} from "../../../store/editorStore";
+import ElementStore from "../model/elementStore";
 
 interface ISettingsEditorProps {
     selected: number,
@@ -14,7 +14,7 @@ const SettingsEditor: FC<ISettingsEditorProps> = ({selected, value}) => {
     return (
         <Stack spacing={2}>
             <Observer>
-                {() => value.editor_config.settings_view_component({index: selected, theme: theme})}
+                {() => value.editor_config.settings_component({index: selected, theme: theme})}
             </Observer>
         </Stack>
     );

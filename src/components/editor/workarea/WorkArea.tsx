@@ -4,8 +4,9 @@ import Typography from "@mui/material/Typography";
 import Divider from "@mui/material/Divider";
 import {Box, Button, Stack } from '@mui/material';
 import {DragDropContext, Droppable, DropResult} from 'react-beautiful-dnd';
-import {editorStore} from "../../../store/editorStore";
 import {observer} from "mobx-react-lite";
+import editorStore from "../model/editorStore";
+import axios from "axios";
 
 const WorkArea = observer(() => {
     const onDragStart = () => {
@@ -21,6 +22,16 @@ const WorkArea = observer(() => {
 
         editorStore.elements = newItems
     };
+
+    const handlePublishClick = () => {
+        const data = {
+            published: true,
+            elements_config: editorStore.elements.map((value) => value.data)
+        }
+        console.log(JSON.stringify(data.elements_config))
+        // axios.post("http://127.0.0.1:8000/form/", data)
+        //     .then((response) => console.log(response.data))
+    }
 
     return (
         <Stack spacing={2}>
@@ -45,7 +56,7 @@ const WorkArea = observer(() => {
             </DragDropContext>
             {editorStore.elements.length !== 0 &&
                 <Stack direction={"row"} spacing={1} sx={{paddingBottom: 2}}>
-                    <Button variant="outlined">Publish</Button>
+                    <Button variant="outlined" onClick={handlePublishClick}>Publish</Button>
                     <Button variant="outlined">Save draft</Button>
                     <Button variant="outlined">Preview</Button>
                 </Stack>

@@ -1,9 +1,10 @@
 import React, {ChangeEventHandler} from 'react';
-import {BaseEditorInputsElementDataStore, editorStore} from "../../../store/editorStore";
 import {FormControlLabel, Switch} from "@mui/material";
 import TextField from "@mui/material/TextField";
 import {observer} from "mobx-react-lite";
 import {handleDescriptionChange, handleLabelChange} from "./handlers";
+import BaseEditorInputsElementDataStore from "../model/baseEditorInputsElementDataStore";
+import editorStore from "../model/editorStore";
 
 type Props = {
     index: number
